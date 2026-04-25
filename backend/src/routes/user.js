@@ -172,14 +172,14 @@ router.post("/load-plugin", (req, res) => {
 
 				// 1. Define the exact, hardcoded list of allowed plugins and their safe paths
 		const ALLOWED_PLUGINS = {
-		  'my-safe-plugin': './plugins/my-safe-plugin.js',
-		  'another-plugin': './plugins/another-plugin.js' 
-		  // Add any other actual plugins you use here
+			'my-safe-plugin': './plugins/my-safe-plugin.js',
+			'another-plugin': './plugins/another-plugin.js' 
+			// Add any other actual plugins you use here
 		};
 		
 		// 2. Validate the user input against the allowlist before requiring
 		if (!ALLOWED_PLUGINS[pluginName]) {
-		  throw new Error(`Unauthorized or invalid plugin requested: ${pluginName}`);
+			throw new Error(`Unauthorized or invalid plugin requested: ${pluginName}`);
 		}
 		
 		// 3. Require using the safe, hardcoded path
